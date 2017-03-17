@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>My Book Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+<body ng-controller="mainCtrl">
+  <nav>
+    <ul>
+      <li><a ui-sref='home'>Home</a></li>
+      <li><a ui-sref='about'>About</a></li>
+    </ul>
+  </nav>
+
+  <!--  {{thisAppIsBroken}} -->
+
+  <input placeholder="what are you looking for?" />
+  <button ng-click="bookResult()">Search</button>
+  <button>Find a Suggestion</button>
+  <button>Totally Random</button>
+
+    <ui-view></ui-view>
+    <div ng-bind='data' ng-repeat="item in results | filter: title">></div>
+    <div>
+      Image: {{data.image}}</br>
+      Title: {{results.title}}</br>
+      Author: {{data.author}}</br>
+      Description: {{description}}</br>
+    </div>
+
+{{results}}
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+<script src="./js/app.js"></script>
+<script src="./js/mainCtrl.js"></script>
+<script src="./js/mainService.js"></script>
+
+</body>
+</html>
