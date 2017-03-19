@@ -2,35 +2,30 @@
 <html ng-app="myApp">
   <head>
     <title>My Book Finder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css" />
   </head>
 <body ng-controller="mainCtrl">
+
   <nav>
+    <h2>Book Finder!</h2>
+
     <ul>
-      <li><a ui-sref='home'>Home</a></li>
-      <li><a ui-sref='about'>About</a></li>
+      <li class='inline'><a ui-sref='home'>Home</a></li>
+      <li class='inline'>/</li>
+      <li class='inline'><a ui-sref='about'>About</a></li>
     </ul>
   </nav>
 
-  <!--  {{thisAppIsBroken}} -->
 
-  <input placeholder="what are you looking for?" />
-  <button ng-click="bookResult()">Search</button>
-  <button>Find a Suggestion</button>
-  <button>Totally Random</button>
+<div class="wrapper">
+  <input type="text" ng-model="search" placeholder="what are you looking for?" /></br>
+  <button ui-sref='results' class="btn-primary" ng-click="getBook(search)">Search</button>
+  <!-- <button class="btn-info">Find a Suggestion</button>
+  <button class="btn-warning">Totally Random</button> -->
+</div>
 
-    <ui-view></ui-view>
-    <div ng-bind='data' ng-repeat="item in results | filter: title">></div>
-    <div>
-      Image: {{data.image}}</br>
-      Title: {{results.title}}</br>
-      Author: {{data.author}}</br>
-      Description: {{description}}</br>
-    </div>
-
-{{results}}
-
-
+<ui-view></ui-view>
 
 
 
