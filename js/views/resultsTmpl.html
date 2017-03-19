@@ -1,12 +1,18 @@
 <div>
-  <img src="{{book[0].volumeInfo.imageLinks.thumbnail}}"></br></br>
+
+  <div class='thumbnail'><img src="{{book[0].volumeInfo.imageLinks.thumbnail}}"></br></br></div>
+<div class='main-info'>
   <a target=_blank href="{{book[0].volumeInfo.infoLink}}">{{book[0].volumeInfo.title}}</a></br>
+
   {{book[0].volumeInfo.subtitle}}</br></br>
   Written by: {{book[0].volumeInfo.authors}}</br></br>
+  </div>
+  <div class='description'>
   Description: {{book[0].volumeInfo.description}}</br></br>
+  </div>
 </div>
 
-<div>
+<div class='see-also'>
   <p>See also:</p>
   <a target=_blank href="{{book[1].volumeInfo.infoLink}}">{{book[1].volumeInfo.title}}</a></br>
   <a target=_blank href="{{book[2].volumeInfo.infoLink}}">{{book[2].volumeInfo.title}}</a></br>
